@@ -5,68 +5,77 @@ services:
     build:
       context: ./apps/web
       dockerfile: Dockerfile
+    container_name: listino-web
     ports:
-      - "3006:3006"
+      - "127.0.0.1:3007:3006"
     environment:
-      - NEXT_PUBLIC_API_URL=http://api:8006
+      - NEXT_PUBLIC_API_URL=https://api.listino-pronto.it
+      - DATABASE_URL=postgresql://listino:listino_secret@db:5432/listino_pronto
     depends_on:
       - api
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+    networks:
+      - listino
 
   api:
     build:
       context: ./apps/api
       dockerfile: Dockerfile
+    container_name: listino-api
     ports:
-      - "8006:8006"
+      - "127.0.0.1:8007:8006"
+    env_file:
+      - .env
     environment:
-      - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY}
-      - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT}
-      - AZURE_OPENAI_API_VERSION=${AZURE_OPENAI_API_VERSION:-2024-02-15-preview}
-      - AZURE_OPENAI_DEPLOYMENT=${AZURE_OPENAI_DEPLOYMENT:-gpt-4o}
       - CHROMA_PATH=/app/chroma_data
-      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_URL=postgresql://listino:listino_secret@db:5432/listino_pronto
+      - CHROMA_HOST=chromadb
+      - CHROMA_PORT=8000
     volumes:
       - chroma_data:/app/chroma_data
     depends_on:
       - db
       - chromadb
     restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 1G
+    networks:
+      - listino
 
   db:
     image: postgres:15-alpine
+    container_name: listino-db
     environment:
       - POSTGRES_USER=listino
       - POSTGRES_PASSWORD=listino_secret
       - POSTGRES_DB=listino_pronto
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
     restart: unless-stopped
+    networks:
+      - listino
 
   chromadb:
     image: chromadb/chroma:latest
-    ports:
-      - "8000:8000"
+    container_name: listino-chromadb
     volumes:
       - chroma_data:/chroma/chroma
     environment:
       - ANONYMIZED_TELEMETRY=false
     restart: unless-stopped
-
-  nginx:
-    image: nginx:alpine
-    ports:
-      - "80:80"
-      - "443:443"
-    volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-    depends_on:
-      - web
-      - api
-    restart: unless-stopped
+    networks:
+      - listino
 
 volumes:
   postgres_data:
   chroma_data:
+
+networks:
+  listino:
+    driver: bridge
