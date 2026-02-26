@@ -2,7 +2,7 @@ import json
 import asyncio
 from typing import Optional
 
-from openai import AsyncOpenAI
+from openai import AsyncAzureOpenAI
 
 from app.core.config import settings
 from app.schemas.catalog import ClassifyItem, ClassifyResult, ExtractedFeature
@@ -23,7 +23,7 @@ Return ONLY valid JSON with this exact schema:
 
 
 async def classify_single(
-    client: AsyncOpenAI,
+    client: AsyncAzureOpenAI,
     item: ClassifyItem,
     few_shot_examples: list[dict] | None = None,
     semaphore: asyncio.Semaphore | None = None,
@@ -60,7 +60,7 @@ async def classify_single(
         try:
             response = await asyncio.wait_for(
                 client.chat.completions.create(
-                    model="gpt-4o",
+                    model=settings.azure_openai_deployment,
                     messages=messages,
                     response_format={"type": "json_object"},
                     temperature=0.1,
@@ -101,7 +101,11 @@ async def classify_batch(
     items: list[ClassifyItem],
     few_shot_examples: list[dict] | None = None,
 ) -> list[ClassifyResult]:
-    client = AsyncOpenAI(api_key=settings.openai_api_key)
+    client = AsyncAzureOpenAI(
+        api_key=settings.azure_openai_api_key,
+        azure_endpoint=settings.azure_openai_endpoint,
+        api_version=settings.azure_openai_api_version,
+    )
     semaphore = asyncio.Semaphore(5)
 
     tasks = [

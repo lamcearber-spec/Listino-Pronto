@@ -6,7 +6,11 @@ class Settings(BaseSettings):
     environment: str = "development"
     api_host: str = "0.0.0.0"
     api_port: int = 8006
-    openai_api_key: str = ""
+    # Azure OpenAI
+    azure_openai_api_key: str = ""
+    azure_openai_endpoint: str = ""
+    azure_openai_api_version: str = "2024-02-15-preview"
+    azure_openai_deployment: str = "gpt-4o"
     chroma_path: str = "./chroma_data"
     database_url: str = ""
     ai_confidence_threshold: float = 0.90
