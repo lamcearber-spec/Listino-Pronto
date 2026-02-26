@@ -1,0 +1,139 @@
+{
+  "nav": {
+    "features": "Features",
+    "pricing": "Pricing",
+    "faq": "FAQ",
+    "support": "Support",
+    "upload": "Upload Catalog",
+    "settings": "Settings"
+  },
+  "hero": {
+    "title": "Convert your product catalog to ETIM and Metel format",
+    "subtitle": "Upload your CSV or Excel price list and get compliant BMEcat XML and Metel ECP files, ready for Italian electrical distribution.",
+    "cta": "Upload your catalog",
+    "trusted": "ETIM 9.0 and Metel compliant"
+  },
+  "steps": {
+    "step1": "Upload Catalog",
+    "step1Desc": "Drag and drop your CSV or Excel file with product data",
+    "step2": "AI ETIM Mapping",
+    "step2Desc": "AI classifies products according to the ETIM 9.0 taxonomy",
+    "step3": "Export Metel",
+    "step3Desc": "Download validated BMEcat XML or Metel ECP files"
+  },
+  "features": {
+    "title": "Why Choose Listino Pronto",
+    "ai": "AI ETIM Classification",
+    "aiDesc": "Dual-expert AI engine with ChromaDB and GPT-4 for precise ETIM classification",
+    "formats": "Dual Export Format",
+    "formatsDesc": "BMEcat 5.0 XML with Italian UDX fields and legacy Metel ECP format",
+    "learning": "Active Learning",
+    "learningDesc": "The system learns from your corrections and improves over time for each company",
+    "compliance": "Guaranteed Metel Compliance",
+    "complianceDesc": "Output validated against ETIM XSD schemas and Metel ECP layout specifications"
+  },
+  "trust": {
+    "gdpr": "GDPR Compliant",
+    "eu": "EU Hosting",
+    "etim": "ETIM 9.0 Certified",
+    "metel": "Metel Compatible"
+  },
+  "pricing": {
+    "title": "Plans & Pricing",
+    "subtitle": "Choose the plan that fits your catalog size",
+    "starter": "Starter",
+    "starterPrice": "€29",
+    "starterPeriod": "/month",
+    "starterYear": "€290/year",
+    "starterFeature1": "5,000 SKUs/year",
+    "starterFeature2": "Metel ECP export",
+    "starterFeature3": "Email support",
+    "business": "Business",
+    "businessPrice": "€99",
+    "businessPeriod": "/month",
+    "businessYear": "€800/year",
+    "businessFeature1": "48,000 SKUs/year",
+    "businessFeature2": "BMEcat XML + Metel ECP",
+    "businessFeature3": "Advanced AI classification",
+    "businessFeature4": "Active learning",
+    "enterprise": "Enterprise",
+    "enterprisePrice": "Custom",
+    "enterpriseFeature1": "Unlimited SKUs",
+    "enterpriseFeature2": "API access",
+    "enterpriseFeature3": "AI model fine-tuning",
+    "enterpriseFeature4": "Dedicated account manager",
+    "cta": "Get Started",
+    "contact": "Contact Us",
+    "popular": "Most Popular"
+  },
+  "upload": {
+    "title": "Upload Your Catalog",
+    "dropzone": "Drag and drop your CSV or Excel file here",
+    "dropzoneAlt": "or click to select",
+    "formats": "Supported formats: .csv, .xlsx, .xls",
+    "mapping": "Column Mapping",
+    "mappingDesc": "Connect your file columns to standard fields",
+    "confirm": "Confirm Mapping",
+    "description": "Product Description",
+    "ean": "EAN Code",
+    "price": "Price",
+    "manufacturer_code": "Manufacturer Code",
+    "brand": "Brand",
+    "quantity": "Carton Quantity"
+  },
+  "preview": {
+    "title": "AI ETIM Mapping",
+    "original": "Original Description",
+    "etimClass": "ETIM Class",
+    "features": "Features",
+    "confidence": "Confidence",
+    "actions": "Actions",
+    "edit": "Edit",
+    "approve": "Approve",
+    "exportXml": "Export BMEcat XML",
+    "exportEcp": "Export Metel ECP",
+    "classifyAll": "Classify All",
+    "approveAll": "Approve All",
+    "processing": "Classifying...",
+    "noData": "No data. Upload a catalog first."
+  },
+  "settings": {
+    "title": "Company Settings",
+    "companyId": "Metel Code (3 characters)",
+    "companyIdHelp": "The 3-character identification code assigned by Metel",
+    "brandId": "Brand ID",
+    "brandIdHelp": "Your brand name as registered with Metel",
+    "save": "Save Settings",
+    "saved": "Settings saved successfully"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "q1": "What is ETIM BMEcat format?",
+    "a1": "BMEcat is the international XML standard for exchanging product catalogs in the electrical sector. ETIM 9.0 provides the classification taxonomy with over 5,500 product classes.",
+    "q2": "What is Metel ECP format?",
+    "a2": "Metel ECP is the legacy fixed-width format used by Italian electrical distributors. Each row is exactly 80 characters with predefined column positions.",
+    "q3": "How accurate is the AI classification?",
+    "a3": "Our AI engine achieves over 90% accuracy thanks to the dual-expert ChromaDB + GPT-4 pipeline. The system improves over time by learning from your corrections.",
+    "q4": "How does SKU-based billing work?",
+    "a4": "You only pay for the number of articles (SKUs) you classify. Each plan has a yearly SKU limit. Unused SKUs do not roll over."
+  },
+  "footer": {
+    "description": "Listino Pronto converts product catalogs to ETIM BMEcat and Metel ECP format for the Italian electrical distribution market.",
+    "product": "Product",
+    "legal": "Legal",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "impressum": "Impressum",
+    "copyright": "© 2026 Listino Pronto. All rights reserved."
+  },
+  "cookie": {
+    "message": "We use technical cookies to improve your experience. No data is shared with third parties.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+  "legal": {
+    "privacyTitle": "Privacy Policy",
+    "termsTitle": "Terms & Conditions",
+    "impressumTitle": "Impressum"
+  }
+}

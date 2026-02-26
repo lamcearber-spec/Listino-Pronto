@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Plan {
+  FREE
+  STARTER
+  BUSINESS
+  ENTERPRISE
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String?
+  plan      Plan     @default(FREE)
+  companyId String?  @map("company_id") @db.VarChar(3)
+  brandId   String?  @map("brand_id")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  uploads     Upload[]
+  corrections TenantCorrection[]
+
+  @@map("users")
+}
+
+model Upload {
+  id        Int      @id @default(autoincrement())
+  userId    Int      @map("user_id")
+  fileName  String   @map("file_name")
+  rowCount  Int      @map("row_count")
+  status    String   @default("pending")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("uploads")
+}
+
+model TenantCorrection {
+  id                   Int      @id @default(autoincrement())
+  userId               Int      @map("user_id")
+  originalDescription  String   @map("original_description")
+  correctEtimClass     String   @map("correct_etim_class")
+  verifiedFeaturesJson String?  @map("verified_features_json")
+  createdAt            DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@map("tenant_corrections")
+}

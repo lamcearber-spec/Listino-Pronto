@@ -1,0 +1,14 @@
+{
+  "name": "listino-pronto",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test"
+  },
+  "devDependencies": {
+    "turbo": "^1.12.0"
+  }
+}

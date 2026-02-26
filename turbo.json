@@ -1,0 +1,11 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env*"],
+  "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_API_URL", "DATABASE_URL", "OPENAI_API_KEY", "CHROMA_PATH"],
+  "pipeline": {
+    "build": { "dependsOn": ["^build"], "outputs": [".next/**", "!.next/cache/**"] },
+    "dev": { "cache": false, "persistent": true },
+    "lint": {},
+    "test": {}
+  }
+}

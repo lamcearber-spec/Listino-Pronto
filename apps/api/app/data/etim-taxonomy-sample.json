@@ -1,0 +1,106 @@
+[
+  {
+    "class_id": "EC000042",
+    "class_name": "Miniature circuit breaker",
+    "synonyms_it": ["interruttore magnetotermico", "interruttore automatico", "MCB"],
+    "synonyms_en": ["miniature circuit breaker", "MCB", "circuit breaker"],
+    "features": [
+      {"code": "EF000227", "name": "Rated current", "unit": "A"},
+      {"code": "EF000228", "name": "Rated voltage", "unit": "V"},
+      {"code": "EF000229", "name": "Number of poles", "unit": ""}
+    ]
+  },
+  {
+    "class_id": "EC000049",
+    "class_name": "Residual current device",
+    "synonyms_it": ["interruttore differenziale", "RCD", "salvavita"],
+    "synonyms_en": ["residual current device", "RCD", "RCCB"],
+    "features": [
+      {"code": "EF000230", "name": "Rated residual current", "unit": "mA"},
+      {"code": "EF000227", "name": "Rated current", "unit": "A"}
+    ]
+  },
+  {
+    "class_id": "EC000056",
+    "class_name": "Cable",
+    "synonyms_it": ["cavo", "cavo elettrico", "conduttore"],
+    "synonyms_en": ["cable", "electrical cable", "wire", "conductor"],
+    "features": [
+      {"code": "EF000500", "name": "Cross-section", "unit": "mm\u00b2"},
+      {"code": "EF000501", "name": "Number of cores", "unit": ""}
+    ]
+  },
+  {
+    "class_id": "EC000100",
+    "class_name": "Socket outlet",
+    "synonyms_it": ["presa", "presa elettrica", "presa a muro"],
+    "synonyms_en": ["socket outlet", "wall socket", "power outlet"],
+    "features": [
+      {"code": "EF000227", "name": "Rated current", "unit": "A"},
+      {"code": "EF000228", "name": "Rated voltage", "unit": "V"}
+    ]
+  },
+  {
+    "class_id": "EC000150",
+    "class_name": "Switch",
+    "synonyms_it": ["interruttore", "deviatore", "pulsante"],
+    "synonyms_en": ["switch", "toggle switch", "rocker switch"],
+    "features": [
+      {"code": "EF000227", "name": "Rated current", "unit": "A"},
+      {"code": "EF000510", "name": "Switch type", "unit": ""}
+    ]
+  },
+  {
+    "class_id": "EC000200",
+    "class_name": "LED luminaire",
+    "synonyms_it": ["lampada LED", "plafoniera LED", "apparecchio illuminazione LED"],
+    "synonyms_en": ["LED luminaire", "LED light fixture", "LED lamp"],
+    "features": [
+      {"code": "EF000600", "name": "Luminous flux", "unit": "lm"},
+      {"code": "EF000601", "name": "Color temperature", "unit": "K"},
+      {"code": "EF000602", "name": "Power consumption", "unit": "W"}
+    ]
+  },
+  {
+    "class_id": "EC000250",
+    "class_name": "Contactor",
+    "synonyms_it": ["contattore", "teleruttore"],
+    "synonyms_en": ["contactor", "power contactor"],
+    "features": [
+      {"code": "EF000227", "name": "Rated current", "unit": "A"},
+      {"code": "EF000228", "name": "Rated voltage", "unit": "V"},
+      {"code": "EF000700", "name": "Coil voltage", "unit": "V"}
+    ]
+  },
+  {
+    "class_id": "EC000300",
+    "class_name": "Distribution board",
+    "synonyms_it": ["quadro elettrico", "centralino", "quadro di distribuzione"],
+    "synonyms_en": ["distribution board", "panel board", "consumer unit"],
+    "features": [
+      {"code": "EF000800", "name": "Number of modules", "unit": ""},
+      {"code": "EF000801", "name": "Protection class", "unit": ""}
+    ]
+  },
+  {
+    "class_id": "EC000350",
+    "class_name": "Surge protection device",
+    "synonyms_it": ["scaricatore di sovratensione", "SPD", "protezione da sovratensione"],
+    "synonyms_en": ["surge protection device", "SPD", "surge arrester"],
+    "features": [
+      {"code": "EF000228", "name": "Rated voltage", "unit": "V"},
+      {"code": "EF000900", "name": "Protection level", "unit": "kV"}
+    ]
+  },
+  {
+    "class_id": "EC000400",
+    "class_name": "Cable tray",
+    "synonyms_it": ["passerella portacavi", "canalina", "canale portacavi"],
+    "synonyms_en": ["cable tray", "cable ladder", "cable channel"],
+    "features": [
+      {"code": "EF001000", "name": "Width", "unit": "mm"},
+      {"code": "EF001001", "name": "Height", "unit": "mm"},
+      {"code": "EF001002", "name": "Length", "unit": "m"}
+    ]
+  }
+]
